@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ComplaintService } from '../complaint.service';
 import { Complaint } from '../models/complaint';
+import { Product } from '../models/product';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-client-home-page',
@@ -12,20 +14,31 @@ export class ClientHomePageComponent implements OnInit {
 
   clientId : string;
   complaint :Complaint;
+  product : Product;
+  products : Product[];
   complaints : Complaint[];
-  constructor(private route:ActivatedRoute,private router : Router,private complaintService : ComplaintService) { }
+  constructor(private route:ActivatedRoute,private router : Router,private complaintService : ComplaintService,private productService :ProductService) { }
 
   ngOnInit(): void {
     this.complaint = new Complaint();
+    this.product= new Product();
     this.clientId = this.route.snapshot.params['clientId'];
     console.log(this.clientId);
     this.reloadComplaintData();
+    this.reloadProductData();
   }
 
   reloadComplaintData() {
     this.complaintService.getClientAllComplaints(this.clientId).subscribe(
       complaints => {
-        this.complaints = complaints
+        this.complaints = complaints;
+      }
+    );
+  }
+  reloadProductData(){
+    this.productService.getProductsByClientId(this.clientId).subscribe(
+      products=>{
+        this.products=products;
       }
     );
   }
@@ -41,7 +54,7 @@ export class ClientHomePageComponent implements OnInit {
     this.router.navigate(['client',this.clientId]);
   }
   goToAllproducts(){
-
+    this.router.navigate(['clientId',this.clientId]);
   }
   goToHomePage(){
     alert('Logging out');
@@ -50,6 +63,10 @@ export class ClientHomePageComponent implements OnInit {
 
   complaintDetails(id : number){
     this.router.navigate(['complaintId',id])
+  }
+
+  productDetails(modelNumber : string){
+    this.router.navigate(['modelNumber',modelNumber]);
   }
 
 }

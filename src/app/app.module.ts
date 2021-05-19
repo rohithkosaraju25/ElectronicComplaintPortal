@@ -27,6 +27,7 @@ import { ClientService } from './client.service';
 import { ClientHomePageComponent } from './client-home-page/client-home-page.component';
 import { GetProductByClientIdComponent } from './get-product-by-client-id/get-product-by-client-id.component';
 import { ProductService } from './product.service';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { ProductService } from './product.service';
     ClientLoginComponent,
     EngineerLoginComponent,
     ClientHomePageComponent,
-    GetProductByClientIdComponent
+    GetProductByClientIdComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
