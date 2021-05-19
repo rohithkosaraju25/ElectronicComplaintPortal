@@ -1,0 +1,29 @@
+<p>complaint-details works!</p>
+<h2>Complaint Details</h2>
+<hr>
+<div *ngIf = "complaint">
+    <div>
+        <label> <b> ComplaintId : </b></label> {{complaint.complaintId}}
+    </div>
+    <div>
+        <label> <b> Product Model Number : </b></label> {{complaint.productModelNumber}}
+    </div>
+    <div>
+        <label> <b> Complaint Description : </b></label> {{complaint. complaintName}}
+    </div>
+    <div>
+        <label> <b> Complaint Status : </b></label> {{complaint.status}}
+    </div>
+    <div>
+        <label> <b> Client Id : </b></label> {{complaint.clientId}}
+    </div>
+    <div>
+        <label> <b> Engineer Id : </b></label> {{complaint.engineerId}}
+    </div>
+    <div>
+        <label> <b> Complaint Regestration date : </b></label> {{complaint.complaintRegDate}}
+    </div>
+    <div>
+        <label> <b> Maximum date to resolve : </b></label> {{complaint.maximumDateToResolve}}
+    </div>
+</div>

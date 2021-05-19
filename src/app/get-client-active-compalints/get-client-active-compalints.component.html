@@ -1,0 +1,34 @@
+<p>get-client-active-compalints works!</p>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2>Products List</h2>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped table-inverse table-responsive">
+            <thead class="thead-inverse">
+                <tr>
+                    <th>Complaint Id</th>
+                    <th>Product Model No.</th>
+                    <th>Status</th>
+                    <th>Complaint Date to Resolve</th>
+                    <th>Engineer Id</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor= "let complaint of complaints">
+                        <td >{{complaint.complaintId}}</td>
+                        <td>{{complaint.productModelNumber}}</td>
+                        <td>{{complaint.status}}</td>
+                        <td>{{complaint.maximumDateToResolve}}</td>
+                        <td>{{complaint.engineerId}}</td>
+                        <td>
+                            <button (click)="complaintDetails(complaint.complaintId)" class="btn btn-info" style="margin-left:15px" >Details>></button>
+                            <button (click)="changeStatus(complaint.complaintId)" class="btn btn-info" style="margin-left:15px" >Change Status</button>
+                            <button (click)="getEngineerDetails(complaint.complaintId)" class="btn btn-info" style="margin-left:15px">Engineer Details</button>
+                        </td>
+                    </tr>
+                </tbody>
+        </table>
+    </div>
+</div>

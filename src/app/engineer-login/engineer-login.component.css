@@ -1,0 +1,26 @@
+.signin-content {
+    padding: 100px 0;
+}
+display-flex, .display-flex, .display-flex-center, .signup-content, .signin-content {
+    display: flex;
+    display: -webkit-flex;
+}
+body {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #222;
+    background: #f8f8f8;
+    font-weight: 400;
+    font-family: Poppins;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+figure {
+    margin-bottom: 50px;
+    text-align: center;
+}
+.form-submit{
+    background-color:rgb(47, 138, 199);
+}

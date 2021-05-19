@@ -1,0 +1,34 @@
+<p>get-product-by-complaint-id works!</p>
+<h3>Product Details</h3>
+<hr>
+<div *ngIf = "product">
+    <div>
+        <label> <b> client Id : </b></label> {{product.clientId}}
+    </div>
+    <div>
+        <label> <b>Product Model Number : </b></label> {{product.modelNumber}}
+    </div>
+    <div>
+        <label> <b> Product Name : </b></label> {{product.productName}}
+    </div>
+    <div>
+        <label> <b> Product Category Name : </b></label> {{product.productCategoryName}}
+    </div>
+    <div>
+        <label> <b> Date of Purchase : </b></label> {{product.dateofPurchase}}
+    </div>
+    <div>
+        <label> <b> Warranty Years : </b></label> {{product.warrantyYears}}
+    </div>
+    <div>
+        <label> <b> Warranty Date : </b></label> {{product.warrantyDate}}
+    </div>
+</div>
+
+<!-- modelNumber : string;
+productName : string;
+productCategoryName : string;
+dateOfPurchase : Date;
+warrantyYears : number;
+warrantyDate : Date;
+clientId : string; -->
