@@ -15,8 +15,10 @@ import { GetClientAllOpenComplaintsComponent } from './get-client-all-open-compl
 import { GetEngineerByComplaintIdComponent } from './get-engineer-by-complaint-id/get-engineer-by-complaint-id.component';
 import { GetProductByClientIdComponent } from './get-product-by-client-id/get-product-by-client-id.component';
 import { GetProductByComplaintIdComponent } from './get-product-by-complaint-id/get-product-by-complaint-id.component';
+import { GetReplaceRequestComplaintsComponent } from './get-replace-request-complaints/get-replace-request-complaints.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { ReplaceEngineerComponent } from './replace-engineer/replace-engineer.component';
 import { ServiceComponent } from './service/service.component';
 import { TeamComponent } from './team/team.component';
 
@@ -41,7 +43,9 @@ const routes: Routes = [
   {path : 'clientSignIn',component:ClientLoginComponent},
   {path : 'clientHome/:clientId',component:ClientHomePageComponent},
   {path : 'clientId/:clientId',component:GetProductByClientIdComponent},
-  {path : 'modelNumber/:modelNumber',component:ProductDetailsComponent}
+  {path : 'modelNumber/:modelNumber',component:ProductDetailsComponent},
+  {path : 'requestedForReplacement',component:GetReplaceRequestComplaintsComponent},
+  {path : 'replace/engineer/complaintId/:complaintId',component:ReplaceEngineerComponent}
 ];
 
 @NgModule({

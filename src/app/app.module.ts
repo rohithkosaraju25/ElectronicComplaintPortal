@@ -29,6 +29,9 @@ import { ClientHomePageComponent } from './client-home-page/client-home-page.com
 import { GetProductByClientIdComponent } from './get-product-by-client-id/get-product-by-client-id.component';
 import { ProductService } from './product.service';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { AdminService } from './admin.service';
+import { GetReplaceRequestComplaintsComponent } from './get-replace-request-complaints/get-replace-request-complaints.component';
+import { ReplaceEngineerComponent } from './replace-engineer/replace-engineer.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +54,9 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     EngineerLoginComponent,
     ClientHomePageComponent,
     GetProductByClientIdComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    GetReplaceRequestComplaintsComponent,
+    ReplaceEngineerComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +66,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     ReactiveFormsModule,
     CarouselModule   
   ],
-  providers: [ComplaintService,ClientService,ProductService],
+  providers: [ComplaintService,ClientService,ProductService,AdminService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

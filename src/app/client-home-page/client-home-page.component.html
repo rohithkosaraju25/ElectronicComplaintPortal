@@ -42,24 +42,28 @@
           <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
               <li class="nav-item">
-                <button type="button" (click)="goTobookComplaint()" class="btn btn-secondary"
-                  style="margin-left:15px">Book Complaint</button>
+                <button type="button" (click)="goTobookComplaint()" class="btn btn-secondary" data-toggle="tooltip"
+                  data-placement="top" title="Book a Complaint" style="margin-left:15px">Book Complaint</button>
               </li>
               <li class="nav-item">
-                <button type="button" (click)="goToAllComplaints()" class="btn btn-info" style="margin-left:15px">View
+                <button type="button" (click)="goToAllComplaints()" class="btn btn-info" data-toggle="tooltip"
+                  data-placement="top" title="View All Your Complaints" style="margin-left:15px">View
                   All Complaints</button>
               </li>
               <li class="nav-item">
-                <button type="button" (click)="goToActiveComplaints()" class="btn btn-info"
-                  style="margin-left:15px">View All Active Complaints</button>
+                <button type="button" (click)="goToActiveComplaints()" class="btn btn-info" data-toggle="tooltip"
+                  data-placement="top" title="View Your Active Complaints" style="margin-left:15px">View All Active
+                  Complaints</button>
               </li>
               <li class="nav-item">
-                <button type="button" (click)="goToAllproducts()" class="btn btn-info" style="margin-left:15px">View
+                <button type="button" (click)="goToAllproducts()" class="btn btn-info" data-toggle="tooltip"
+                  data-placement="top" title="View Your Products" style="margin-left:15px">View
                   Products</button>
               </li>
               <li class="nav-item">
-                <button type="button" (click)="goToHomePage()" class="btn btn-warning" style="margin-left:15px"> <a
-                    href=''>Log Out</a></button>
+                <button type="button" (click)="goToHomePage()" class="btn btn-warning" data-toggle="tooltip"
+                  data-placement="top" title="Log Out Of Portal" style="margin-left:15px"> <a href=''>Log
+                    Out</a></button>
               </li>
             </ul>
 
@@ -68,62 +72,173 @@
       </div>
     </div>
   </header>
-  
-  <section >
-    <div id="carouselExampleCaptions" class="carousel slide">
-      <div class="carousel-inner row-md-3 w-100 mx-auto">
-        <div class="carousel-item" *ngFor="let product of products;let complaint of complaints;let index = index;let isFirst = first"
-          [ngClass]="{active:isFirst}">
-          <div class="col-md-6"  style="float:left">
-            <div class="card mb-1">
-              <img class="card-img-top"
-                src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
-              <div class="card-body">
-                <div class="row-md-4">
-                <h4 class="card-title" style="margin-left:150px ;">Product</h4>
-                <p class="card-text" style="margin-left:150px ;"><b>ModelNumber :</b>{{products[index].modelNumber}}</p>
-                <p class="card-text" style="margin-left:150px ;"><b>Product Name :</b>{{products[index].productName}}</p>
-                <p class="card-text" style="margin-left:150px ;"><b>Warranty Date :</b>{{products[index].warrantyDate}}</p>
-                <button (click)="productDetails(product.modelNumber)" class="btn btn-info"
-                  style="margin-left:150px ; text-align : right;"> Details</button>
+  <section>
+    <div>
+      <div id="carouselExampleCaptions" class="carousel slide">
+        <div class="carousel-inner row-md-3 w-100 mx-auto">
+          <div class="carousel-item" *ngFor="let product of products;let index = index;let isFirst = first"
+            [ngClass]="{active:isFirst}">
+            <div class="col-md-12 my-4">
+              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col-auto d-none d-lg-block">
+                  <img class="img-fluid" src="/assets/img/fimage.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="col p-4 d-flex flex-column position-static my-5">
+
+                  <h4 class="card-title" style="margin-left:150px ;">Product</h4>
+                  <p class="card-text" style="margin-left:150px ;"><b>ModelNumber :</b>{{products[index].modelNumber}}
+                  </p>
+                  <p class="card-text" style="margin-left:150px ;"><b>Product Name :</b>{{products[index].productName}}
+                  </p>
+                  <p class="card-text" style="margin-left:150px ;"><b>Warranty Date
+                      :</b>{{products[index].warrantyDate}}</p>
+                  <div class="col-md-2">
+                    <button (click)="productDetails(product.modelNumber)" class="btn btn-info"
+                      style="margin-left:150px ; text-align : right;"> Details</button>
+                  </div>
+
+                </div>
+
               </div>
             </div>
-            </div>
+            <!---->
+            <!---->
+            <!---->
           </div>
-          <!---->
-          <div class="col-md-6" style="float:left">
-            <div class="card mb-6" >
-              <img class="card-img-top"
-                src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
-              <div class="card-body">
-                <div class="row-md-4">
-                <h4 class="card-title" style="margin-left:150px ;">Complaint</h4>
-                <p class="card-text" style="margin-left:150px ;"><b>Complaint Id :</b>{{complaints[index].complaintId}}</p>
-                <p class="card-text" style="margin-left:150px ;"><b>Complaint Name :</b>{{complaints[index].complaintName}}</p>
-                <p class="card-text" style="margin-left:150px ;"><b>Complaint Status :</b>{{complaints[index].status}}</p>
-                <button (click)="productDetails(product.modelNumber)" class="btn btn-info"
-                  style="margin-left:150px ; text-align : right;"> Details</button>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div> 
+  </section>
+  <hr>
+  <hr>
+  <br>
+  <br>
+
+  <section>
+    <div>
+      <div id="carouselExampleCaptions2" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleCaptions2" *ngFor="let complaint of complaints;let index = index"
+            [attr.data-slide-to]="index"></li>
+        </ol>
+        <div class="carousel-inner row-md-1 w-100 mx-auto">
+          <div class="carousel-item" *ngFor="let complaint of complaints;let index = index;let isFirst = first"
+            [ngClass]="{active:isFirst}">
+            <div class="col-md-12 my-4">
+              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col-auto d-none d-lg-block">
+                  <img class="img-fluid" src="/assets/img/fimage.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="col p-4 d-flex flex-column position-static my-5">
+
+                  <h4 class="card-title" style="margin-left:150px ;">Complaint</h4>
+                  <p class="card-text" style="margin-left:150px ;"><b>Complaint Id: </b>{{complaint.complaintId}}
+                  </p>
+                  <p class="card-text" style="margin-left:150px ;"><b>Complaint Name: </b>{{complaint.complaintName}}
+                  </p>
+                  <p class="card-text" style="margin-left:150px ;"><b>Status: 
+                      </b>{{complaint.status}}</p>
+                  <div class="col-md-2">
+                    <button (click)="complaintDetails(complaint.complaintId)" class="btn btn-info"
+                      style="margin-left:150px ; text-align : right;"> Details</button>
+                  </div>
+
+                </div>
+
               </div>
             </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleCaptions2" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleCaptions2" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+ 
+  <section>
+    <div class="row row-md-3">
+
+      <div class="row">
+        <div class="col-xs-1-12">
+          <div class="card" style="width: 29rem;">
+            <div class="card-body">
+              <h3 class="card-title"><button class="btn btn-info">View Profile</button></h3>
+              <p class="card-text">Check your Details here</p>
             </div>
           </div>
-      
-          <!---->
-          <!---->
+        </div>
+        <div class="col-xs-1-12">
+          <div class="card" style="width: 29rem;">
+            <div class="card-body">
+              <h3 class="card-title"><button class="btn btn-info">View Open Complaints</button></h3>
+              <p class="card-text">Check your Open Complaints here</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-1-12">
+          <div class="card" style="width: 29rem;">
+            <div class="card-body">
+              <h3 class="card-title"><button class="btn btn-info">Replace Engineer</button></h3>
+              <p class="card-text">Request for replacement of engineer here</p>
+            </div>
+          </div>
         </div>
       </div>
-      <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
     </div>
-    
   </section>
-  <!-- <footer id="footer">
+
+  <section>
+    <div class="row row-md-3">
+
+      <div class="row">
+        <div class="col-xs-1-12">
+          <div class="card" style="width: 29rem;">
+            <div class="card-body">
+              <h3 class="card-title"><button class="btn btn-info">Status</button></h3>
+              <p class="card-text">Track your complaint status here</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-1-12">
+          <div class="card" style="width: 29rem;">
+            <div class="card-body">
+              <h3 class="card-title"><button class="btn btn-info">View on going Complaints</button></h3>
+              <p class="card-text">Check your on going Complaints here</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-1-12">
+          <div class="card" style="width: 29rem;">
+            <div class="card-body">
+              <h3 class="card-title"><button class="btn btn-info">View Closed Complaints</button></h3>
+              <p class="card-text">Request for Closed Complaints here</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer">
     <div class="footer-top">
       <div class="container">
         <div class="row">
@@ -172,7 +287,7 @@
         &copy; Copyright <strong><span>ABC Electronics</span></strong>. All Rights Reserved
       </div>
     </div>
-  </footer> -->
+  </footer>
   <!-- End Footer
 
   <!-- Vendor JS Files -->

@@ -7,4 +7,5 @@ export class Complaint{
     engineerId : number;
     complaintRegDate : Date;
     maximumDateToResolve : Date;
+    replaceRequest : string;
 }
