@@ -179,7 +179,7 @@
         <div class="col-xs-1-12">
           <div class="card" style="width: 29rem;">
             <div class="card-body">
-              <h3 class="card-title"><button class="btn btn-info">View Profile</button></h3>
+              <h3 class="card-title"><button type="submit" (click) = "goToClientDetails()" class="btn btn-info">View Profile</button></h3>
               <p class="card-text">Check your Details here</p>
             </div>
           </div>
@@ -187,7 +187,7 @@
         <div class="col-xs-1-12">
           <div class="card" style="width: 29rem;">
             <div class="card-body">
-              <h3 class="card-title"><button class="btn btn-info">View Open Complaints</button></h3>
+              <h3 class="card-title"><button type = "submit" (click)="goToAllOpenComplaints()" class="btn btn-info">View Open Complaints</button></h3>
               <p class="card-text">Check your Open Complaints here</p>
             </div>
           </div>
@@ -196,7 +196,7 @@
         <div class="col-xs-1-12">
           <div class="card" style="width: 29rem;">
             <div class="card-body">
-              <h3 class="card-title"><button class="btn btn-info">Replace Engineer</button></h3>
+              <h3 class="card-title"><button type = "submit" (click)="goToRequestComplaints()" class="btn btn-info">Replace Engineer</button></h3>
               <p class="card-text">Request for replacement of engineer here</p>
             </div>
           </div>
@@ -212,15 +212,15 @@
         <div class="col-xs-1-12">
           <div class="card" style="width: 29rem;">
             <div class="card-body">
-              <h3 class="card-title"><button class="btn btn-info">Status</button></h3>
-              <p class="card-text">Track your complaint status here</p>
+              <h3 class="card-title"><button class="btn btn-info" (click)="goToRequestStatus()">Replace Request Status</button></h3>
+              <p class="card-text">Track replace engineer request status here</p>
             </div>
           </div>
         </div>
         <div class="col-xs-1-12">
           <div class="card" style="width: 29rem;">
             <div class="card-body">
-              <h3 class="card-title"><button class="btn btn-info">View on going Complaints</button></h3>
+              <h3 class="card-title"><button class="btn btn-info" (click)="goToonGoingComplaints()" >View on going Complaints</button></h3>
               <p class="card-text">Check your on going Complaints here</p>
             </div>
           </div>
@@ -229,8 +229,8 @@
         <div class="col-xs-1-12">
           <div class="card" style="width: 29rem;">
             <div class="card-body">
-              <h3 class="card-title"><button class="btn btn-info">View Closed Complaints</button></h3>
-              <p class="card-text">Request for Closed Complaints here</p>
+              <h3 class="card-title"><button class="btn btn-info" (click)="goToResolvedComplaints()">View Resolved Complaints</button></h3>
+              <p class="card-text">View your resolved complaints here</p>
             </div>
           </div>
         </div>

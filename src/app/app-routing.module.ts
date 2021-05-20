@@ -4,6 +4,7 @@ import { AboutComponent } from './about/about.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { BookComplaintComponent } from './book-complaint/book-complaint.component';
 import { ChangeComplaintStatusComponent } from './change-complaint-status/change-complaint-status.component';
+import { ClientDetailsComponent } from './client-details/client-details.component';
 import { ClientHomePageComponent } from './client-home-page/client-home-page.component';
 import { ClientLoginComponent } from './client-login/client-login.component';
 import { ComplaintDetailsComponent } from './complaint-details/complaint-details.component';
@@ -12,6 +13,9 @@ import { EngineerLoginComponent } from './engineer-login/engineer-login.componen
 import { GetClientActiveCompalintsComponent } from './get-client-active-compalints/get-client-active-compalints.component';
 import { GetClientAllComplaintsComponent } from './get-client-all-complaints/get-client-all-complaints.component';
 import { GetClientAllOpenComplaintsComponent } from './get-client-all-open-complaints/get-client-all-open-complaints.component';
+import { GetClientOnGoingComplaintsComponent } from './get-client-on-going-complaints/get-client-on-going-complaints.component';
+import { GetClientReplacementRequestComplaintsComponent } from './get-client-replacement-request-complaints/get-client-replacement-request-complaints.component';
+import { GetClientResolvedComplaintsComponent } from './get-client-resolved-complaints/get-client-resolved-complaints.component';
 import { GetEngineerByComplaintIdComponent } from './get-engineer-by-complaint-id/get-engineer-by-complaint-id.component';
 import { GetProductByClientIdComponent } from './get-product-by-client-id/get-product-by-client-id.component';
 import { GetProductByComplaintIdComponent } from './get-product-by-complaint-id/get-product-by-complaint-id.component';
@@ -19,6 +23,7 @@ import { GetReplaceRequestComplaintsComponent } from './get-replace-request-comp
 import { HomepageComponent } from './homepage/homepage.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ReplaceEngineerComponent } from './replace-engineer/replace-engineer.component';
+import { RequestToReplaceComponent } from './request-to-replace/request-to-replace.component';
 import { ServiceComponent } from './service/service.component';
 import { TeamComponent } from './team/team.component';
 
@@ -45,7 +50,12 @@ const routes: Routes = [
   {path : 'clientId/:clientId',component:GetProductByClientIdComponent},
   {path : 'modelNumber/:modelNumber',component:ProductDetailsComponent},
   {path : 'requestedForReplacement',component:GetReplaceRequestComplaintsComponent},
-  {path : 'replace/engineer/complaintId/:complaintId',component:ReplaceEngineerComponent}
+  {path : 'replace/engineer/complaintId/:complaintId',component:ReplaceEngineerComponent},
+  {path : 'details/clientId/:clientId',component:ClientDetailsComponent},
+  {path : 'requestStatus/:complaintId',component:RequestToReplaceComponent},
+  {path : 'requested/replacement/client/:clientId',component:GetClientReplacementRequestComplaintsComponent},
+  {path : 'resolved/client/:clientId',component:GetClientResolvedComplaintsComponent},
+  {path : 'onGoing/client/:clientId',component:GetClientOnGoingComplaintsComponent}
 ];
 
 @NgModule({

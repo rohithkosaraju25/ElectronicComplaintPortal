@@ -32,6 +32,11 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { AdminService } from './admin.service';
 import { GetReplaceRequestComplaintsComponent } from './get-replace-request-complaints/get-replace-request-complaints.component';
 import { ReplaceEngineerComponent } from './replace-engineer/replace-engineer.component';
+import { ClientDetailsComponent } from './client-details/client-details.component';
+import { RequestToReplaceComponent } from './request-to-replace/request-to-replace.component';
+import { GetClientReplacementRequestComplaintsComponent } from './get-client-replacement-request-complaints/get-client-replacement-request-complaints.component';
+import { GetClientResolvedComplaintsComponent } from './get-client-resolved-complaints/get-client-resolved-complaints.component';
+import { GetClientOnGoingComplaintsComponent } from './get-client-on-going-complaints/get-client-on-going-complaints.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +61,12 @@ import { ReplaceEngineerComponent } from './replace-engineer/replace-engineer.co
     GetProductByClientIdComponent,
     ProductDetailsComponent,
     GetReplaceRequestComplaintsComponent,
-    ReplaceEngineerComponent
+    ReplaceEngineerComponent,
+    ClientDetailsComponent,
+    RequestToReplaceComponent,
+    GetClientReplacementRequestComplaintsComponent,
+    GetClientResolvedComplaintsComponent,
+    GetClientOnGoingComplaintsComponent
   ],
   imports: [
     BrowserModule,

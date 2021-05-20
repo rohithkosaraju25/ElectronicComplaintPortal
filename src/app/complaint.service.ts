@@ -41,4 +41,16 @@ export class ComplaintService {
   getClientActiveComplaints(clientId : string) : Observable<any>{
     return this.http.get("http://localhost:8091/complaint/active/client/"+clientId);
   }
+  requestForReplacementOfEngineer(complaintId : number) : Observable<any>{
+    return this.http.put(this.baseURL+'/requestStatus/'+`${complaintId}`,complaintId);
+  }
+  getClientRequestedForReplacementComplaints(clientId : string) : Observable<any>{
+    return this.http.get(this.baseURL+'/requested/replacement/client/'+`${clientId}`);
+  }
+  getClientResolvedComplaints(clientId : string) : Observable<any>{
+    return this.http.get("http://localhost:8091/complaint/resolved/client/"+clientId);
+  }
+  getClientonGoingComplaints(clientId : string) : Observable<any>{
+    return this.http.get("http://localhost:8091/complaint/onGoing/client/"+clientId);
+  }
 }

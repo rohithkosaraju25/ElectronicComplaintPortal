@@ -16,4 +16,7 @@ export class ClientService {
       .set('password',password);
     return  this.http.get(this.baseURL+'/clientSignIn',{params});
   }
+  getClientByCLientId(clientId:string) : Observable<any>{
+   return this.http.get(this.baseURL+'/details/clientId/'+`${clientId}`);
+  }
 }

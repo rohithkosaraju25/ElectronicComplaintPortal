@@ -4,11 +4,11 @@ import { ComplaintService } from '../complaint.service';
 import { Complaint } from '../models/complaint';
 
 @Component({
-  selector: 'app-get-client-active-compalints',
-  templateUrl: './get-client-active-compalints.component.html',
-  styleUrls: ['./get-client-active-compalints.component.css']
+  selector: 'app-get-client-resolved-complaints',
+  templateUrl: './get-client-resolved-complaints.component.html',
+  styleUrls: ['./get-client-resolved-complaints.component.css']
 })
-export class GetClientActiveCompalintsComponent implements OnInit {
+export class GetClientResolvedComplaintsComponent implements OnInit {
 
   clientId : string;
   complaints : Complaint[];
@@ -20,9 +20,11 @@ export class GetClientActiveCompalintsComponent implements OnInit {
 
   reloadComplaintData() {
     this.clientId = this.route.snapshot.params['clientId'];
-    this.complaintService.getClientActiveComplaints(this.clientId).subscribe(
+    console.log("here",this.clientId);
+    this.complaintService.getClientResolvedComplaints(this.clientId).subscribe(
       complaints => {
         this.complaints = complaints
+        console.log(complaints);
       }
     );
   }//reload close
@@ -31,17 +33,12 @@ export class GetClientActiveCompalintsComponent implements OnInit {
     this.router.navigate(['complaintId',id])
   }
   
-  changeStatus(id : number){
-    console.log("active",id);
-    this.router.navigate(['changeStatus',id])
+  changeStatus(id :number,status:string){
+    this.router.navigate(['changeStatus',id,status])
   }
 
   getEngineerDetails(id:number){
     this.router.navigate(['engineer/complaintId',id])
-  }
-
-  goToReplaceEngineer(id : number){
-    this.router.navigate(['requestStatus',id]);
   }
 
 }

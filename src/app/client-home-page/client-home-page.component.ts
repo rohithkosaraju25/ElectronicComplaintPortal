@@ -70,4 +70,23 @@ export class ClientHomePageComponent implements OnInit {
     this.router.navigate(['modelNumber',modelNumber]);
   }
 
+  goToClientDetails(){
+    this.router.navigate(['details/clientId',this.clientId]);
+  }
+
+  goToAllOpenComplaints(){
+    this.router.navigate(['open/client',this.clientId]);
+  }
+  goToRequestComplaints(){
+    this.router.navigate(['active/client',this.clientId]);
+  }
+  goToRequestStatus(){
+    this.router.navigate(['requested/replacement/client',this.clientId]);
+  }
+  goToResolvedComplaints(){
+    this.router.navigate(['resolved/client',this.clientId]);
+  }
+  goToonGoingComplaints(){
+    this.router.navigate(['onGoing/client',this.clientId]);
+  }
 }
