@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 import {HttpClientModule} from '@angular/common/http'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -58,7 +59,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    
+    CarouselModule   
   ],
   providers: [ComplaintService,ClientService,ProductService],
   bootstrap: [AppComponent]

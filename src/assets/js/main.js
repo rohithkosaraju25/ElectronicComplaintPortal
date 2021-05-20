@@ -184,31 +184,14 @@
     aos_init();
   });
 
-  $(document).ready(function() {
-    $("#carouselExampleCaptions").on("slide.bs.carousel", function(e) {
-      var $e = $(e.relatedTarget);
-      var idx = $e.index();
-      var itemsPerSlide = 3;
-      var totalItems = $(".carousel-item").length;
-      console.log(totalItems);
-  
-      if (idx >= totalItems - (itemsPerSlide - 1)) {
-        var it = itemsPerSlide - (totalItems - idx);
-        for (var i = 0; i < it; i++) {
-          // append slides to end
-          if (e.direction == "left") {
-            $(".carousel-item")
-              .eq(i)
-              .appendTo(".carousel-inner");
-          } else {
-            $(".carousel-item")
-              .eq(0)
-              .appendTo($(this).find(".carousel-inner"));
-          }
-        }
-      }
-    });
+  var carouselExampleCaptions = $("#carouselExampleCaptions");
+
+  carouselExampleCaptions.on('slid.bs.carousel', function(e) {
+    $(this).find('h2').addClass('animate__animated animate__fadeInDown');
+    $(this).find('p, .btn-get-started').addClass('animate__animated animate__fadeInUp');
   });
+  // Back to top button
+ 
   
   
 

@@ -316,10 +316,7 @@ body {
 .carousel-inner .carousel-item-left{ 
   transform: translateX(0);
 }
-.card{
-  padding-right: 100px;
-}
-  
+
   /*--------------------------------------------------------------
   # Hero Section
   --------------------------------------------------------------*/
