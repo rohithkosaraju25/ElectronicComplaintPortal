@@ -1,6 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
+import { AddProductComponent } from './add-product/add-product.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { BookComplaintComponent } from './book-complaint/book-complaint.component';
 import { ChangeComplaintStatusComponent } from './change-complaint-status/change-complaint-status.component';
@@ -55,7 +56,8 @@ const routes: Routes = [
   {path : 'requestStatus/:complaintId',component:RequestToReplaceComponent},
   {path : 'requested/replacement/client/:clientId',component:GetClientReplacementRequestComplaintsComponent},
   {path : 'resolved/client/:clientId',component:GetClientResolvedComplaintsComponent},
-  {path : 'onGoing/client/:clientId',component:GetClientOnGoingComplaintsComponent}
+  {path : 'onGoing/client/:clientId',component:GetClientOnGoingComplaintsComponent},
+  {path : 'addProduct',component:AddProductComponent}
 ];
 
 @NgModule({

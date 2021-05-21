@@ -16,4 +16,8 @@ export class ProductService {
   findByModelNumber(modelNumber : string) : Observable<any>{
     return this.http.get(this.baseURL+"/modelNumber/"+`${modelNumber}`);
   }
+
+  addProduct(product : any) :Observable<any>{
+    return this.http.post("http://localhost:8091/product/addProduct",product);
+  }
 }

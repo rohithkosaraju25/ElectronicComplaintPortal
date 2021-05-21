@@ -43,5 +43,11 @@ export class GetClientActiveCompalintsComponent implements OnInit {
   goToReplaceEngineer(id : number){
     this.router.navigate(['requestStatus',id]);
   }
-
+  goToHomePage(){
+    alert("Logging out....");
+    this.router.navigate(['']);
+  }
+  goToClinetHome(){
+    this.router.navigate(['clientHome',this.clientId]);
+  }
 }

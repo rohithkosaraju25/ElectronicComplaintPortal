@@ -22,5 +22,12 @@ export class ComplaintDetailsComponent implements OnInit {
         this.complaint = selectedComplaint;
       }, error =>console.log(error));
   }
-
+  goToHomePage(){
+    alert("Logging out....");
+    this.router.navigate(['']);
+  }
+  goToClinetHome(){
+    console.log(this.complaint.clientId);
+    this.router.navigate(['clientHome',this.complaint.clientId]);
+  }
 }

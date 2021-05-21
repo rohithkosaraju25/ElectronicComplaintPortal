@@ -1,0 +1,19 @@
+label {
+    padding-top: 15px;
+}
+
+form{
+    color:cadetblue;
+    font-size: larger;
+    
+}
+
+
+  .btn  {
+
+    border-radius: 4px;
+    font-size: 28px;
+    margin: 5px;
+    text-align: center;
+    
+  }  

@@ -37,6 +37,7 @@ import { RequestToReplaceComponent } from './request-to-replace/request-to-repla
 import { GetClientReplacementRequestComplaintsComponent } from './get-client-replacement-request-complaints/get-client-replacement-request-complaints.component';
 import { GetClientResolvedComplaintsComponent } from './get-client-resolved-complaints/get-client-resolved-complaints.component';
 import { GetClientOnGoingComplaintsComponent } from './get-client-on-going-complaints/get-client-on-going-complaints.component';
+import { AddProductComponent } from './add-product/add-product.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { GetClientOnGoingComplaintsComponent } from './get-client-on-going-compl
     RequestToReplaceComponent,
     GetClientReplacementRequestComplaintsComponent,
     GetClientResolvedComplaintsComponent,
-    GetClientOnGoingComplaintsComponent
+    GetClientOnGoingComplaintsComponent,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,
